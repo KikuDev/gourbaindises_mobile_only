@@ -1,0 +1,35 @@
+<div class="details">
+	<div class="wrapper">
+		<img [src]="product.images" [alt]="product.post_title">
+	</div>
+	<h1>{{ product.post_title }}</h1>
+
+	<p>{{ product.post_excerpt }}</p>
+
+	<h5 class="ing" (click)="toggleContent()">
+		Ingrédients <i *ngIf="!isOpen" class="material-icons">add</i><i *ngIf="isOpen" class="material-icons">remove</i>
+	</h5>
+	<div class="content" [ngClass]="{'opened': isOpen}">
+		<p *ngFor="let content of productContent">{{ content }}</p>
+	</div>
+
+	<button class="btn black first">
+		<a href="https://www.lesgourbaindises.com/produit/{{ product.post_name }}">Voir sur la boutique en ligne</a>
+	</button>
+	<button class="btn black">
+		<a href="/">Voir tous les produits</a>
+	</button>
+</div>
+
+<div class="qrcode" (click)="displayQR()">
+	<img *ngIf="!QReady" [src]="QRIcon" alt="qr code">
+	<i *ngIf="QReady" class="material-icons">clear</i>
+</div>
+
+<ngx-qrcode 
+      *ngIf="QReady"
+      [qrc-element-type]="url" 
+      [qrc-value] = "currentUrl"
+      qrc-class = "aclass"
+      qrc-errorCorrectionLevel = "L">
+</ngx-qrcode>

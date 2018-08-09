@@ -1,0 +1,9 @@
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 17px;
+	app-product-item {
+		padding: 1px;
+		width: 100%;
+	}
+}

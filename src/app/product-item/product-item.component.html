@@ -1,0 +1,9 @@
+<li *ngIf="product.images">
+  <div class="productImg" [ngStyle]="{'background-image': 'url(' + product.images + ')'}"></div>
+  <!--<img [src]="product.images" alt="{{ product.post_title }}">-->
+  <div class="text">
+    <h4>{{ product.post_title }}</h4>
+    <a routerLink="/detail/{{product.ID}}"><i class="material-icons">zoom_in</i></a>
+    
+  </div>
+</li>
