@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsDataService } from '../products-data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-details',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  product: object = {};
+  product: Product;
   QRIcon: string = '../../assets/qrcode.svg';
   QReady: boolean = false;
   currentUrl: string;
