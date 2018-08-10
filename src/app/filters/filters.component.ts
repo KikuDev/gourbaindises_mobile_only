@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
-  selectedCategory = 'Toutes les catégories';
+  selectedCategory:string = 'Toutes les catégories';
   categories:Array<string> = [
     'Toutes les catégories',
     'Bain',
